@@ -32,7 +32,7 @@ pipeline {
 
     stage('Deploy to Kubernetes') {
       steps {
-        bat 'kubectl apply -f k8s\\'
+        bat 'set KUBECONFIG=C:\\Users\\user\\.kube\\config && kubectl apply -f k8s/'
       }
     }
   }
