@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insurance-policy-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: insurance-policy
+  template:
+    metadata:
+      labels:
+        app: insurance-policy
+    spec:
+      containers:
+      - name: insurance-policy
+        image: omkar9089/insurance-policy-app:latest
+        ports:
+        - containerPort: 3000
